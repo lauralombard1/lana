@@ -86,6 +86,7 @@ main {
     padding: 10px;
     border-radius: 10px;
     box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.123);
+    
 }
 
 .album img {
@@ -130,4 +131,66 @@ footer {
 
 h1, h2, p {
     animation: fadeIn 1s ease-out;
+}
+
+/* ----- EFEITO DE GIRO 3D NAS DIVS .ALBUM ----- */
+.album {
+  perspective: 1000px;
+}
+
+.album-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.album:hover .album-inner {
+  transform: rotateY(180deg);
+}
+
+/* Faces do card */
+.album-front,
+.album-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.123);
+}
+
+/* Frente (imagem + texto) */
+.album-front {
+  background-color: #af4e50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.album-front img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.album-front p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: white;
+}
+
+/* Verso */
+.album-back {
+  background: linear-gradient(135deg, #8f3e3f, #c55f5f);
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  text-align: center;
 }
