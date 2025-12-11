@@ -267,50 +267,6 @@
             <p>&copy; 2025 Lana Del Rey. Todos os direitos reservados.</p>
         </footer>
 
-       
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const images = document.querySelectorAll("#fotos img");
-                const modal = document.createElement("div");
-                const modalImg = document.createElement("img");
-        
-                // Estilizando o modal
-                modal.style.display = "none";
-                modal.style.position = "fixed";
-                modal.style.zIndex = "1000";
-                modal.style.left = "0";
-                modal.style.top = "0";
-                modal.style.width = "100%";
-                modal.style.height = "100%";
-                modal.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-                modal.style.justifyContent = "center";
-                modal.style.alignItems = "center";
-                modal.appendChild(modalImg);
-                document.body.appendChild(modal);
-        
-                images.forEach(img => {
-                    img.style.transition = "transform 0.2s"; // Efeito de transição
-        
-                    img.addEventListener("mouseover", function() {
-                        this.style.transform = "scale(1.1)"; // Zoom ao passar o mouse
-                    });
-        
-                    img.addEventListener("mouseout", function() {
-                        this.style.transform = "scale(1)"; // Retorna ao normal
-                    });
-        
-                    img.addEventListener("click", function() {
-                        modalImg.src = this.src; // Define a imagem do modal
-                        modal.style.display = "flex"; // Exibe o modal
-                    });
-                });
-        
-                modal.addEventListener("click", function() {
-                    modal.style.display = "none"; // Fecha o modal ao clicar
-                });
-            });
-        </script>
-
     </body>
 
 </html>
